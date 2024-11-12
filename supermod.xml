@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<mod name="WolfgangHUD-DevTools"
+    description="DevTools for WolfgangHUD."
+    priority="0"
+    author="BangL"
+	contact="https://steamcommunity.com/id/BangL"
+    version="2.30.3"
+    color="255 60 60">
+    <dependencies>
+        <dependency name="WolfgangHUD"
+                    download_url="https://api.modworkshop.net/files/24551/download" />
+    </dependencies>
+    <hooks>
+        <group script_path="hooks/">
+            <post hook_id="core/lib/managers/coreworldcollection"   :script_path="CoreWorldCollection.lua" />
+            <post hook_id="lib/managers/lootdropmanager"            :script_path="LootDropManager.lua" />
+            <post hook_id="lib/managers/greedmanager"               :script_path="GreedManager.lua" />
+            <post hook_id="lib/managers/consumablemissionmanager"   :script_path="ConsumableMissionManager.lua" />
+        </group>
+        <group script_path="modules/">
+            <post hook_id="lib/entry"                               :script_path="LootSpy.lua" />
+        </group>
+    </hooks>
+    <keybinds>
+        <keybind keybind_id="wghdt_waypoints_debug_toggle"
+                name="Waypoints Toggle"
+                description="Toggle Waypoints Debug mode."
+                script_path="keybinds/WGWaypointsDebugToggle.lua"
+                run_in_menu="false"
+                run_in_game="true"
+                run_in_paused_game="false" />
+        <keybind keybind_id="wghdt_lootspy_toggle"
+                name="LootSpy Toggle"
+                description="Toggle LootSpy mode."
+                script_path="keybinds/LootSpyToggle.lua"
+                run_in_menu="false"
+                run_in_game="true"
+                run_in_paused_game="false" />
+    </keybinds>
+</mod>
