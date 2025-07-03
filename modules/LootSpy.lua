@@ -56,7 +56,7 @@ end
 function LootSpy:make_waypoint(type, position, key, editor_id, unit)
     local is_ignored = false
     local lookup = GameInfoManager._INTERACTIONS.IGNORE_IDS
-    local job_id = managers.raid_job:current_operation_event()
+    local job_id = (managers.raid_job:current_job() and managers.raid_job:current_job().job_type == OperationsTweakData.JOB_TYPE_OPERATION)
         and managers.raid_job:current_operation_event().mission_id
         or managers.raid_job:current_job_id()
     if lookup[job_id] and lookup[job_id][editor_id % 1000000] then
