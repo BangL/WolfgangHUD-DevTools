@@ -21,7 +21,7 @@ LootSpy.TYPES = {
 }
 
 function LootSpy:reset()
-    for _, id in ipairs(self._waypoints or {}) do
+    for id in pairs(self._waypoints or {}) do
         managers.waypoints:remove_waypoint(id)
     end
     self._items = {}
@@ -51,6 +51,7 @@ function LootSpy:init_waypoints()
     for _, item in ipairs(self._items or {}) do
         self:make_waypoint(item.type, item.position, item.key, item.editor_id, item.unit)
     end
+    self:refresh()
 end
 
 function LootSpy:make_waypoint(type, position, key, editor_id, unit)
@@ -87,14 +88,13 @@ function LootSpy:make_waypoint(type, position, key, editor_id, unit)
     }
 
     self._waypoints["LootSpyItem_" .. key] = waypoint_params
-    self:refresh()
 end
 
 function LootSpy:refresh()
     for id, waypoint_params in pairs(self._waypoints or {}) do
         managers.waypoints:remove_waypoint(id)
         if self._enable then
-            managers.waypoints:add_waypoint(id, "CustomWaypoint", waypoint_params)
+            managers.waypoints:add_waypoint(id, "CustomWaypoint", waypoint_params, true)
         end
     end
 end
