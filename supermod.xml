@@ -10,6 +10,11 @@
         <dependency name="WolfgangHUD"
                     download_url="https://api.modworkshop.net/files/24551/download" />
     </dependencies>
+    <updates>
+        <update identifier="wolfganghud-devtools">
+            <host meta="https://raw.githubusercontent.com/BangL/raid-mods-meta/main/wolfganghud-devtools.json"/>
+        </update>
+    </updates>
     <hooks>
         <group script_path="hooks/">
             <post hook_id="core/lib/managers/coreworldcollection"   :script_path="CoreWorldCollection.lua" />
