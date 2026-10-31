@@ -12,7 +12,7 @@
     </dependencies>
     <updates>
         <update identifier="wolfganghud-devtools">
-            <host meta="https://raw.githubusercontent.com/BangL/raid-mods-meta/main/wolfganghud-devtools.json"/>
+            <host meta="https://raw.githubusercontent.com/BangL/raid-mods-meta/main/wolfganghud-devtools.json" patchnotes="https://github.com/BangL/WolfgangHUD-DevTools/blob/master/CHANGELOG.md"/>
         </update>
     </updates>
     <hooks>
