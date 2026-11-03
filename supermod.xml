@@ -8,7 +8,7 @@
     color="255 60 60">
     <dependencies>
         <dependency name="WolfgangHUD"
-                    download_url="https://api.modworkshop.net/files/24551/download" />
+                    download_url="https://api.modworkshop.net/mods/24551/download" />
     </dependencies>
     <updates>
         <update identifier="wolfganghud-devtools">
